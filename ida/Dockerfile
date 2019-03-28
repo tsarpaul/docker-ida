@@ -25,6 +25,9 @@ RUN printf "\n\n\n\n\n\ny\n$IDA_PASSWORD\n/ida\ny\ny\n" | /installation/ida.run
 # Create a special file in order to prevent IDA to ask for license acceptance before executing IDA
 RUN touch /ida/license.displayed
 
+# Copy over plugins
+COPY plugins/* /ida/plugins/
+
 RUN mkdir /shared
 WORKDIR /shared
 
